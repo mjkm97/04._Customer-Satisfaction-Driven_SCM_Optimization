@@ -33,9 +33,10 @@
 ### ▪️ 설계 개요
 - 원본 데이터는 중복 및 결측, 비정규화 → **분석/모델링 비효율적**
 - **Fact / Dimension / Mart 테이블 분리**로 **분석 최적화 및 확장성 확보**
-
-![데이터 ERD](images/image.png)  
-![테이블 흐름](images/image-1.png)
+<p float="left">
+  <img src="images/image.png" width="60%" />
+  <img src="images/image-1.png" width="30%" />
+</p>
 
 | 테이블명           | 설명                                                        |
 |-------------------|-------------------------------------------------------------|
@@ -88,7 +89,6 @@ Random Forest Classifier를 사용해 올바른 지역 정보를 예측 하여 �
   <img src="images/image-3.png" width="45%" />
   <img src="images/image-4.png" width="45%" />
 </p>
----
 
 ## 🚚 배송 소요 기간 분석
 
