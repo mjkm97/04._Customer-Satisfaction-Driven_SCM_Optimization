@@ -1,5 +1,6 @@
 #  최적 물류센터 위치 제안 프로젝트  
-![프로젝트 대표 이미지](images/image-15.png)  
+![image](https://github.com/user-attachments/assets/7fec0dee-7b47-43c6-99bd-e7335e1c1aef)
+
 브라질 Olist 데이터를 활용한 소비자 만족도 개선 전략  
 
 ---
@@ -34,8 +35,8 @@
 - 원본 데이터는 중복 및 결측, 비정규화 → **분석/모델링 비효율적**
 - **Fact / Dimension / Mart 테이블 분리**로 **분석 최적화 및 확장성 확보**
 <p float="left">
-  <img src="images/image.png" width="60%" />
-  <img src="images/image-1.png" width="30%" />
+  <img src="https://github.com/user-attachments/assets/84bf9893-f5b5-495f-9951-f14bcbacf8bf" width="60%" />
+  <img src="https://github.com/user-attachments/assets/ad0b2ff6-5729-4808-8299-ed5a9212b29b" width="30%" />
 </p>
 
 | 테이블명           | 설명                                                        |
@@ -86,10 +87,11 @@ Random Forest Classifier를 사용해 올바른 지역 정보를 예측 하여 �
   - 빠른 배송 리뷰 평균 **4.84점**
   - 배송 지연 리뷰 평균 **1.83점**
 
-![감성 분석 결과](images/image-2.png)  
+
+![image](https://github.com/user-attachments/assets/9bd83231-c640-4813-a1d9-64592aa6e557)
 <p float="left">
-  <img src="images/image-3.png" width="45%" />
-  <img src="images/image-4.png" width="45%" />
+  <img src="https://github.com/user-attachments/assets/df22b9f8-3285-447e-b801-0f3aeeccebc2" width="45%" />
+  <img src="https://github.com/user-attachments/assets/bdfdc2c3-081f-4302-acc2-15d3eb29f721" width="45%" />
 </p>
 
 ## 🚚 배송 소요 기간 분석
@@ -103,8 +105,8 @@ Random Forest Classifier를 사용해 올바른 지역 정보를 예측 하여 �
 - **북부/중서부 지역** 배송 지연 심각
 
 <p float="left">
-  <img src="images/image-5.png" width="45%" />
-  <img src="images/image-6.png" width="45%" />
+  <img src="https://github.com/user-attachments/assets/669592b7-fd84-4935-8fcf-2e9df17970a8" width="45%" />
+  <img src="https://github.com/user-attachments/assets/fd680ea3-c0f3-4fd6-bf8e-4b82b5c58a80" width="45%" />
 </p>
 
 ---
@@ -127,25 +129,26 @@ Random Forest Classifier를 사용해 올바른 지역 정보를 예측 하여 �
 | `freight_value`        | 배송비                                     | ★★★☆☆ |
 
 <p float="left">
-  <img src="images/image-7.png" width="45%" />
-  <img src="images/image-8.png" width="45%" />
+  <img src="https://github.com/user-attachments/assets/db8dbc61-ff0d-4c8e-884e-2cd01346a64c" width="45%" />
+  <img src="https://github.com/user-attachments/assets/9d8b7e77-4d51-41e5-9c0d-0116b1ff1e8c" width="45%" />
 </p>
 
 <p float="left">
-  <img src="images/image-9.png" width="45%" />
-  <img src="images/image-10.png" width="45%" />
+  <img src="https://github.com/user-attachments/assets/874bc742-b496-4e8d-aa47-daeb43e832e1" width="45%" />
+  <img src="https://github.com/user-attachments/assets/69ed9876-e137-43f0-9e00-c9a0324c93d8" width="45%" />
 </p>
 
 ---
 
 ## 📍 물류센터 위치 최적화 및 효과
 ### carrier to customer 를 줄이기 위해 , 물류센터의 위치와 고객간의 거리를 최소화하는것을 목표로 함
-![물류센터 최적화 흐름](images/image-11.png)
+![image](https://github.com/user-attachments/assets/f0ad168b-860c-4252-a857-944049fea357)
 
 ---
 
 ### ▪️ 최적화 로직 (KMeans + 군집 기반 접근)
-![alt text](images/image-16.png)
+![image](https://github.com/user-attachments/assets/51be24de-1f16-4b70-83ce-1c9c5f7247ba)
+
 1. 판매자와 고객의 위·경도 평균으로 **초기 허브 위치** 설정  
 2. **주문 수량(quantity)을 가중치**로 거리 차이 최소화 → 물류 허브 최적화  
 3. **Elbow Method**로 최적 클러스터 수(K=5) 결정  
@@ -175,7 +178,7 @@ Random Forest Classifier를 사용해 올바른 지역 정보를 예측 하여 �
 
 | 물류센터 위치 최적화 이전 | 물류센터 위치 최적화 이후 |
 |------------------------|-------------------------|
-| ![전](images/image-12.png) | ![후](images/image-17.png) |
+| ![image](https://github.com/user-attachments/assets/b6ff6b51-c805-4418-a59d-9453fb1510ef)| ![image](https://github.com/user-attachments/assets/9994ca24-4d95-4b0d-83ab-b98e12bc85e8)|
 
 ---
 ##  기술 스택 및 활용 방식
