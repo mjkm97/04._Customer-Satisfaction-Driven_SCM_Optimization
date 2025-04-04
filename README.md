@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/e7f48279-da63-422a-875d-7f5e80a10a73)#  최적 물류센터 위치 제안 프로젝트  
+#  최적 물류센터 위치 제안 프로젝트  
 ![image](https://github.com/user-attachments/assets/7fec0dee-7b47-43c6-99bd-e7335e1c1aef)
 
 브라질 Olist 데이터를 활용한 소비자 만족도 개선 전략  
@@ -151,11 +151,21 @@ Random Forest Classifier를 사용해 올바른 지역 정보를 예측 하여 �
 ---
 
 ### ▪️ 최적화 로직 (KMeans + 군집 기반 접근)
-![image](https://github.com/user-attachments/assets/51be24de-1f16-4b70-83ce-1c9c5f7247ba)
 
-1. 판매자와 고객의 위·경도 평균으로 **초기 허브 위치** 설정  
-2. **주문 수량(quantity)을 가중치**로 거리 차이 최소화 → 물류 허브 최적화  
+
+1. 판매자와 고객의 위·경도 평균으로 **초기 허브 위치** 설정
+![image](https://github.com/user-attachments/assets/827b0a35-ef48-4194-bfc5-79800bbd2da3)
+
+2. **주문 수량(quantity)을 가중치**로 거리 차이 최소화 → 물류 허브 최적화
+![image](https://github.com/user-attachments/assets/190f2435-22c3-4637-b182-fa35d623a673)
+
+Q: "각 주(State)마다 물류센터를 두는 것이 정말 최적인가?"
+> 경우에 따라 특정 주(State)들이 가까운 위치에 있을 수 있음. 예를 들어, SP(상파울루)와 RJ(리우데자네이루)는 가까우므로 하나의 물류센터로 통합하는 것이 더 효율적일 수도 있음.
+
+A : K-Means 클러스터링을 활용하여 물류센터 개수를 최적화.
 3. **Elbow Method**로 최적 클러스터 수(K=5) 결정  
+![image](https://github.com/user-attachments/assets/44f7797d-cc8e-4da7-9640-974ad7c74594)
+
 4. KMeans 클러스터링으로 **최적 물류 허브 중심 좌표 도출**
 
 ---
