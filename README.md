@@ -1,5 +1,6 @@
 #  최적 물류센터 위치 제안 프로젝트  
-![프로젝트 대표 이미지](images/image-15.png)  
+![image](https://github.com/user-attachments/assets/7fec0dee-7b47-43c6-99bd-e7335e1c1aef)
+
 브라질 Olist 데이터를 활용한 소비자 만족도 개선 전략  
 
 ---
@@ -31,27 +32,15 @@
 
 ---
 
-##  기술 스택 및 활용 방식
-
-| 도구/기술      | 활용 내용                                                                 |
-|----------------|---------------------------------------------------------------------------|
-| **Python**     | 데이터 전처리, 머신러닝(NLP/회귀 분석), 시각화 기반 분석 수행              |
-| **PySpark**    | 데이터 정제 및 DW/데이터 마트 설계, 대용량 주문 데이터 전처리 및 처리 효율화 |
-| **Pandas**     | EDA 및 통계 분석, 전처리 보완, 시각화                                     |
-| **Spark SQL**  | 테이블 간 조인 및 집계, 배송 지연 분석 등 SQL 기반 효율적 분석 수행       |
-| **Tableau**    | 주요 분석 결과 및 인사이트 시각화                                         |
-| **Docker**     | 환경 컨테이너화, 재현 가능한 분석 환경 구축                               |
-
----
-
 ##  데이터 구조 및 설계 철학
 
 ### ▪️ 설계 개요
 - 원본 데이터는 중복 및 결측, 비정규화 → **분석/모델링 비효율적**
 - **Fact / Dimension / Mart 테이블 분리**로 **분석 최적화 및 확장성 확보**
-
-![데이터 ERD](images/image.png)  
-![테이블 흐름](images/image-1.png)
+<p float="left">
+  <img src="https://github.com/user-attachments/assets/84bf9893-f5b5-495f-9951-f14bcbacf8bf" width="60%" />
+  <img src="https://github.com/user-attachments/assets/ad0b2ff6-5729-4808-8299-ed5a9212b29b" width="30%" />
+</p>
 
 | 테이블명           | 설명                                                        |
 |-------------------|-------------------------------------------------------------|
@@ -78,20 +67,39 @@
 - 분석 및 모델링 시 **데이터 가독성 향상**, **확장성 및 유지보수 용이**
 
 ---
+## 전처리
+  - 코드 : (https://github.com/YangHyunu/olist-data-driven-logistics/tree/main/preprocessing_analysis)
+  - 설명 : [https://www.notion.so/1a1cd66266a0806e8960e453cb90d3e3](https://heathered-citron-b6f.notion.site/1a1cd66266a0806e8960e453cb90d3e3?pvs=4)
 
+#### 전처리 예시
+위도/경도와 지역 정보(`state`) 불일치 문제(약 1만건) Isolation Forest로 탐지하고
+![image](https://github.com/user-attachments/assets/862e8f50-0f1d-4cd1-850b-163432ad4d9f)
+
+![image](https://github.com/user-attachments/assets/90adc552-6745-4f32-b2fe-573c49bfff13)
+
+Random Forest Classifier를 사용해 올바른 지역 정보를 예측 하여 보정
+| Index   | 위도     | 경도     | 원래 State | 예측 State |
+|---------|----------|----------|------------|-------------|
+| 345301  | -1.8884  | -55.1214 | SP         | PA          |
+| 513631  | 41.6140  | -8.4116  | RJ         | PE          |
+
+---
 ##  리뷰 분석 및 배송 지연 문제 정의
 
 ### ▪️ 감성 분석 (RoBERTa 모델 활용)  
-- 다국어 리뷰 감성 분석: Huggingface RoBERTa fine-tuned 모델 사용  
+- 다국어 리뷰 감성 분석: Huggingface RoBERTa fine-tuned 모델 사용
+  -  XLM-Roberta 모델을 포르투갈어 트위터/X로 학습한 모델이라 리뷰데이터 감성분석에서 제 성능을 보이지 못했음
+  -  과도한 어근추출을 완화하여 단어의 원래 의미를 보존하여 해결결
 - 배송 관련 키워드 기반 감정 분석 → **긍/부정 리뷰 점수 차이 명확**  
   - 빠른 배송 리뷰 평균 **4.84점**
   - 배송 지연 리뷰 평균 **1.83점**
 
-![감성 분석 결과](images/image-2.png)  
-![긍정 리뷰 키워드](images/image-3.png)  
-![부정 리뷰 키워드](images/image-4.png)
 
----
+![image](https://github.com/user-attachments/assets/9bd83231-c640-4813-a1d9-64592aa6e557)
+<p float="left">
+  <img src="https://github.com/user-attachments/assets/df22b9f8-3285-447e-b801-0f3aeeccebc2" width="45%" />
+  <img src="https://github.com/user-attachments/assets/bdfdc2c3-081f-4302-acc2-15d3eb29f721" width="45%" />
+</p>
 
 ## 🚚 배송 소요 기간 분석
 
@@ -100,21 +108,22 @@
 | 판매자-고객 동일 주 | 7.9일       |
 | 서로 다른 주       | 15일        |
 
-- 판매자-고객 거리 및 물류 경로 → 배송 지연 핵심 요인  
+- 판매자-고객 거리 및 물류 경로 → **배송 지연 핵심 요인**  
 - **북부/중서부 지역** 배송 지연 심각
 
-![배송 시간 시각화 1](images/image-5.png)  
-![배송 시간 시각화 2](images/image-6.png)
+<p float="left">
+  <img src="https://github.com/user-attachments/assets/669592b7-fd84-4935-8fcf-2e9df17970a8" width="45%" />
+  <img src="https://github.com/user-attachments/assets/fd680ea3-c0f3-4fd6-bf8e-4b82b5c58a80" width="45%" />
+</p>
 
 ---
-
 ##  머신러닝 분석 및 변수 도출
 
 ### ▪️ 모델 및 분석 방식
 
 | 모델               | 특징 및 활용 목적                                         |
 |--------------------|----------------------------------------------------------|
-| TabNet             | 범주형+수치형 혼합 데이터 최적화, 딥러닝 기반 해석력 확보 |
+| TabNet             | 범주형+수치형 혼합 데이터 최적화                          |
 | Random Forest      | 변수 중요도 직관적, 해석 용이                             |
 | XGBoost, LGBM      | 예측 성능 및 변수 해석력 탁월                             |
 
@@ -126,43 +135,41 @@
 | `customer_lat/lng`     | 고객 위경도 데이터                         | ★★★★☆ |
 | `freight_value`        | 배송비                                     | ★★★☆☆ |
 
-![변수 중요도 시각화1](images/image-7.png)  
-![시각화2](images/image-8.png)  
-![시각화3](images/image-9.png)  
-![시각화4](images/image-10.png)
+<p float="left">
+  <img src="https://github.com/user-attachments/assets/db8dbc61-ff0d-4c8e-884e-2cd01346a64c" width="45%" />
+  <img src="https://github.com/user-attachments/assets/9d8b7e77-4d51-41e5-9c0d-0116b1ff1e8c" width="45%" />
+</p>
+
+<p float="left">
+  <img src="https://github.com/user-attachments/assets/874bc742-b496-4e8d-aa47-daeb43e832e1" width="45%" />
+  <img src="https://github.com/user-attachments/assets/69ed9876-e137-43f0-9e00-c9a0324c93d8" width="45%" />
+</p>
 
 ---
 
 ## 📍 물류센터 위치 최적화 및 효과
-
-![물류센터 최적화 흐름](images/image-11.png)
+### carrier to customer 를 줄이기 위해 , 물류센터의 위치와 고객간의 거리를 최소화하는것을 목표로 함
+![image](https://github.com/user-attachments/assets/f0ad168b-860c-4252-a857-944049fea357)
 
 ---
 
 ### ▪️ 최적화 로직 (KMeans + 군집 기반 접근)
 
-1. 판매자와 고객의 위·경도 평균으로 **초기 허브 위치** 설정  
-2. **주문 수량(quantity)을 가중치**로 거리 차이 최소화 → 물류 허브 최적화  
+
+1. 판매자와 고객의 위·경도 평균으로 **초기 허브 위치** 설정
+![image](https://github.com/user-attachments/assets/827b0a35-ef48-4194-bfc5-79800bbd2da3)
+
+2. **주문 수량(quantity)을 가중치**로 거리 차이 최소화 → 물류 허브 최적화
+![image](https://github.com/user-attachments/assets/190f2435-22c3-4637-b182-fa35d623a673)
+
+Q: "각 주(State)마다 물류센터를 두는 것이 정말 최적인가?"
+> 경우에 따라 특정 주(State)들이 가까운 위치에 있을 수 있음. 예를 들어, SP(상파울루)와 RJ(리우데자네이루)는 가까우므로 하나의 물류센터로 통합하는 것이 더 효율적일 수도 있음.
+
+A : K-Means 클러스터링을 활용하여 물류센터 개수를 최적화.
 3. **Elbow Method**로 최적 클러스터 수(K=5) 결정  
+![image](https://github.com/user-attachments/assets/44f7797d-cc8e-4da7-9640-974ad7c74594)
+
 4. KMeans 클러스터링으로 **최적 물류 허브 중심 좌표 도출**
-
----
-
-### ▪️ 최적화 핵심 코드
-
-```python
-# Elbow Method로 K값 결정
-for k in range(2, 15):
-    kmeans = KMeans(n_clusters=k).fit(optimized_coords)
-    wcss.append(kmeans.inertia_)
-
-# 최적 K 적용 후 클러스터 중심 좌표 추출
-kmeans = KMeans(n_clusters=5)
-df['cluster'] = kmeans.fit_predict(df[['customer_lat', 'customer_lng']])
-cluster_centers = kmeans.cluster_centers_
-```
-![alt text](images/image-16.png)
-
 
 ---
 
@@ -186,23 +193,21 @@ cluster_centers = kmeans.cluster_centers_
 | 최적화 후      | 11.60일     |
 | 개선           | **1.19일 감소 (9.3%)** |
 
-물류센터 위치 최적화 이전  
-![전](images/image-12.png)
-
-물류센터 위치 최적화 이후  
-![후](images/image-17.png)
+| 물류센터 위치 최적화 이전 | 물류센터 위치 최적화 이후 |
+|------------------------|-------------------------|
+| ![image](https://github.com/user-attachments/assets/b6ff6b51-c805-4418-a59d-9453fb1510ef)| ![image](https://github.com/user-attachments/assets/9994ca24-4d95-4b0d-83ab-b98e12bc85e8)|
 
 ---
+##  기술 스택 및 활용 방식
 
-## 🛠️ 기술 스택 및 실행 안내
-
-| 도구           | 활용 내용                                       |
-|----------------|------------------------------------------------|
-| Python         | 전처리, 분석, 머신러닝, NLP                     |
-| SQL            | 데이터 정제 및 분석                            |
-| Tableau        | 시각화 및 대시보드                             |
-| Spark          | 대용량 데이터 처리 및 분석석                             |
-| Docker         | 컨테이너 환경 관리 및 실행                     |
+| 도구/기술      | 활용 내용                                                                 |
+|----------------|---------------------------------------------------------------------------|
+| **Python**     | 데이터 전처리, 머신러닝(NLP/회귀 분석), 시각화 기반 분석 수행              |
+| **PySpark**    | 데이터 정제 및 DW/데이터 마트 설계, 대용량 주문 데이터 전처리 및 처리 효율화 |
+| **Pandas**     | EDA 및 통계 분석, 전처리 보완, 시각화                                     |
+| **Spark SQL**  | 테이블 간 조인 및 집계, 배송 지연 분석 등 SQL 기반 효율적 분석 수행       |
+| **Tableau**    | 주요 분석 결과 및 인사이트 시각화                                         |
+| **Docker**     | 환경 컨테이너화, 재현 가능한 분석 환경 구축                               |
 
 ---
 
