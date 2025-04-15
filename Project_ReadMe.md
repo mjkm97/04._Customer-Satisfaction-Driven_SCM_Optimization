@@ -281,9 +281,9 @@ p-value: 0.029196 ( < 0.05)
 - 브라질의 도로 / 철로 인프라 맵을 참고해 북부 / 중서부를 서부, 북동부 / 남동부 / 남부를 동부로 그룹화하여 동·서부 물류 센터 위치 2곳을 선정하기로 함
     
     
-    ![image.png](image%2012.png)
+    ![image.png](project_readme_image/image%2012.png)
     
-    ![image.png](image%2013.png)
+    ![image.png](project_readme_image/image%2013.png)
     
 - 각 권역 그룹 구매자의 위·경도 중앙값을 기준으로 물류센터 위치를 선정
 - 최초 물류센터 위치
@@ -313,7 +313,7 @@ p-value: 0.029196 ( < 0.05)
 - 서부 : 위도 -15.807180, 
            경도 -49.236702
 
-![image (6).png](image_(6).png)
+![image (6).png](project_readme_image/image_(6).png)
 
 <선정한 물류센터 위치>
 
