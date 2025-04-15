@@ -80,7 +80,7 @@
 
 - 링크: https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
     
-    ![image.png](image.png)
+    ![image.png](project_readme_image/image.png)
     
 - 특징:
     - 대부분의 고객이 단발성 구매 고객으로 나타나 RFM 분석에 적합하지 않음
@@ -121,7 +121,7 @@
 
 **감정 그룹에 따른 평균 점수 차이**
 
-![image.png](image%201.png)
+![image.png](project_readme_image/image%201.png)
 
 **통계적 유의성 확인**
 
@@ -131,7 +131,7 @@ p-value 0.029196 ( < 0.05)
 
 **배송 키워드에 따른 평균 리뷰 점수 차이**
 
-![image.png](image%202.png)
+![image.png](project_readme_image/image%202.png)
 
 **통계적 유의성 확인**
 
@@ -146,11 +146,11 @@ p-value: 0.029196 ( < 0.05)
 
 **[긍정 리뷰 분석 시각화]**
 
-![image.png](image%203.png)
+![image.png](project_readme_image/image%203.png)
 
 **[부정 리뷰 분석 시각화]**
 
-![image.png](image%204.png)
+![image.png](project_readme_image/image%204.png)
 
 👍 **긍정적인 리뷰**에서는:
 
@@ -168,14 +168,14 @@ p-value: 0.029196 ( < 0.05)
 
 - cf. 판매자 / 구매자 주 동일 여부에 따른 평균 배송 기간 차이
     
-    ![image.png](image%205.png)
+    ![image.png](project_readme_image/image%205.png)
     
     판매자 / 구매자 주가 다른 경우의 평균 배송 기간(15일)이 판매자 / 구매자 주가 동일한 경우(약 7.9일)보다 긴 것으로 나타남.
     
 
 **📌지역에 따른 평균 배송 시간**
 
-![image.png](image%206.png)
+![image.png](project_readme_image/image%206.png)
 
 **📌주요 인사이트**
 
@@ -217,7 +217,7 @@ p-value: 0.029196 ( < 0.05)
 
 **📌 배송 키워드에 따른 평균 배송일, 리뷰 점수 차이 비교** 
 
-![image.png](image%207.png)
+![image.png](project_readme_image/image%207.png)
 
 - **빠른 배송 리뷰**
     - 평균 배송일: 8.66일 (전체 평균 10.13일 대비 -1.47일)
@@ -263,13 +263,13 @@ p-value: 0.029196 ( < 0.05)
     가 가장 큰 영향을 미침.
     
 
-![image.png](image%208.png)
+![image.png](project_readme_image/image%208.png)
 
-![image.png](image%209.png)
+![image.png](project_readme_image/image%209.png)
 
-![image.png](image%2010.png)
+![image.png](project_readme_image/image%2010.png)
 
-![image.png](image%2011.png)
+![image.png](project_readme_image/image%2011.png)
 
 ## 3.  배송 시간 단축을 위한 물류센터의 위치 선정 및 제안
 
@@ -324,7 +324,7 @@ p-value: 0.029196 ( < 0.05)
 - 서부 : 위도 -15.799802, 
            경도 -49.208182
 
-![image.png](image%2014.png)
+![image.png](project_readme_image/image%2014.png)
 
 ### **📌** 전체 평균 배송 기간 개선
 
@@ -336,7 +336,7 @@ p-value: 0.029196 ( < 0.05)
 
 아래 표는 판매자 지역과 고객 지역의 조합별로, 수정 전후 예상 배송 기간과 개선 효과를 비교 
 
-![image.png](image%2015.png)
+![image.png](project_readme_image/image%2015.png)
 
 - 전체적으로 평균 **1.19일**의 배송 기간 단축 효과가 예상됨.
 - 특히, **북동부 판매자**와 **북부 구매자**가 물류 센터를 통한 배송 개선 혜택을 크게 볼 것으로 기대됨
@@ -439,7 +439,7 @@ p-value: 0.029196 ( < 0.05)
             - `ordercnt_perseller`(판매자 1인당 주문 수)도 낮음 → **프리미엄 시장 가능성**
         </aside>
         
-        ![image.png](image%2016.png)
+        ![image.png](project_readme_image/image%2016.png)
         
     
     [요약]
@@ -455,14 +455,14 @@ p-value: 0.029196 ( < 0.05)
     - **시각화**
         1. **Intro - 판매액 분석** 
         
-        ![image.png](image%2017.png)
+        ![image.png](project_readme_image/image%2017.png)
         
         1. 평균주문금액
         - 남부, 남동부 지역에서 멀어질 수록 주문당 금액이 많아짐
             - red: 파란색으로 표기 된 지역과 비교하여 1회 주문 당 평균주문금액이 80% 높음
             - blue: 어두운 파란색에 가까울 수록 평균주문금액이 낮은 지역
             
-            ![image.png](image%2018.png)
+            ![image.png](project_readme_image/image%2018.png)
             
         1. 지역별 배송 비용 분석
             - 배송거리에 비례하여 배송비가 증가하는 경향을 보이나, 특히 남부의 판매자에게서 배송비가 과도하게 소모되는 것으로 추정
@@ -470,18 +470,18 @@ p-value: 0.029196 ( < 0.05)
             
             → **같은 주 내에서 배송 케이스:**  배송예상시간 로직 업데이트 필요 
             
-            ![image.png](image%2019.png)
+            ![image.png](project_readme_image/image%2019.png)
             
         
         1. 지역 간 거래량
         - 남동부>남동부의 거래량이 제일 많음
             
-            ![image.png](image%2020.png)
+            ![image.png](project_readme_image/image%2020.png)
             
         
         1. 지역별 시장 규모, 거래량의 편차가 심하다.
             
-            ![image.png](image%2021.png)
+            ![image.png](project_readme_image/image%2021.png)
             
     </aside>
     
@@ -549,23 +549,23 @@ p-value: 0.029196 ( < 0.05)
 
 - xgb의 경우 범주형변수(원 핫 인코딩 혹은 타겟 인코딩 됨)에 높은 가중치를 두는 것을 볼 수 있음
 
-![image.png](image%2022.png)
+![image.png](project_readme_image/image%2022.png)
 
-![image.png](image%2023.png)
+![image.png](project_readme_image/image%2023.png)
 
-![image.png](image%2024.png)
+![image.png](project_readme_image/image%2024.png)
 
 ---
 
 **배송 기간 변수 중요도**
 
-![image.png](image%208.png)
+![image.png](project_readme_image/image%208.png)
 
-![image.png](image%2010.png)
+![image.png](project_readme_image/image%2010.png)
 
-![image.png](image%209.png)
+![image.png](project_readme_image/image%209.png)
 
-![image.png](image%2011.png)
+![image.png](project_readme_image/image%2011.png)
 
 </aside>
 
@@ -573,11 +573,11 @@ p-value: 0.029196 ( < 0.05)
 
 - 회귀분석 결과
     
-    ![image.png](image%2025.png)
+    ![image.png](project_readme_image/image%2025.png)
     
-    ![image.png](image%2026.png)
+    ![image.png](project_readme_image/image%2026.png)
     
-    ![image.png](image%2027.png)
+    ![image.png](project_readme_image/image%2027.png)
     
     회귀 분석 결과 R-square(결정계수) 값이 0.01 정도로 매우 낮고, 예상 배송 시간 단축 효과가 동부 8.42시간, 서부 0.51시간 정도로 매우 미미함.
     
@@ -585,16 +585,16 @@ p-value: 0.029196 ( < 0.05)
     
     or 회귀 모델이 아닌 ML or 신경망 등 다른 모델을 통해 재계산
     
-    ![image.png](image%2028.png)
+    ![image.png](project_readme_image/image%2028.png)
     
     - R² Score: 0.9935
         - MSE: 0.2431
         - RMSE: 0.4930
         - 동부: Prediction: 12.865214524203294
     
-    ![image.png](image%2029.png)
+    ![image.png](project_readme_image/image%2029.png)
     
-    ![image.png](image%2030.png)
+    ![image.png](project_readme_image/image%2030.png)
     
     Model Evaluation Results:
     
